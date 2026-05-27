@@ -22,15 +22,15 @@ The strategy beats the equal-weighted S&P 500 by +3.4% per year gross, and retai
  
 ## Interesting Findings
 
-The classical long-short variant — long the top decile, short the bottom — earned essentially zero in this sample (Sharpe 0.03 gross). That's not a bug. It's survivorship bias, and it's the most important finding in this project.
+The regular long-short variant of long the top decile and short the bottom earned approximately a zero in this sample (Sharpe 0.03 gross). This can be explained because of survivorship bias.
  
-My universe is current S&P 500 members. Every name in the panel survived to today by definition. The "losers" in my cross-section aren't Lehman, Bear Stearns, Circuit City, or Enron — those are absent because they died. The losers are blue-chip companies that had a rough 6 months but didn't go to zero: banks during the financial crisis, energy stocks during oil crashes, Meta in 2022, healthcare names in 2023. These names mean-revert *harder* than the winners do, because they're high-quality firms temporarily out of favor.
+My universe is current S&P 500 members. Every name in the panel survived to today by definition. The "losers" in the cross-section aren't Lehman, Bear Stearns, Circuit City, or Enron because they don't exist anymore. The losers are blue-chip companies that had a rough 6 months. These names mean-revert *harder* than the winners do, because they're high-quality firms temporarily out of favor.
  
-This shows up explicitly in the long-horizon analysis. JT 2001's Figure 3 showed the cumulative winners-minus-losers spread rising to +12% by month 12, then decaying back toward zero by month 60. My replication shows the *opposite* shape in the short term: the spread is slightly negative during the standard holding period, deepens to ~−5.5% around event month 26, then crosses zero and peaks at +5% around event month 47. The inversion is the survivorship-bias signature.
+This shows up explicitly in the long-horizon analysis. JT 2001's Figure 3 showed the cumulative winners-minus-losers spread rising to +12% by month 12, then decaying back toward zero by month 60. My replication shows the *opposite* shape in the short term: the spread is slightly negative during the standard holding period, deepens to −5.5% around event month 26, then crosses zero and peaks at +5% around event month 47. The inversion is the survivorship-bias signature.
  
 ![Long-horizon spread](reports/long_horizon_spread.png)
  
-So the practically investable version of momentum in this universe is long-only, and the analysis is structured around that. The long-short result is reported honestly as a failed replication caused by the data, not by the method.
+So the practically investable version of momentum in this universe is long-only, and the analysis is structured around that. The long-short result is reported honestly as a failed replication caused by the data.
  
 ## What I built
  
@@ -96,7 +96,7 @@ The full pipeline takes ~5–7 minutes end-to-end, most of which is the yfinance
 | 30 bps | 20.37% | 1.10 |
 | 50 bps | 20.05% | 1.09 |
  
-The long leg is essentially cost-insensitive. Going from gross to 50 bps round-trip drops me from 20.85% to 20.05% — about 80 bps per year. Math checks: 13.31% monthly turnover × 50 bps × 12 ≈ 0.80%. The alpha is not a turnover illusion.
+The long leg seems to be cost-insensitive. Going from gross to 50 bps round-trip drops what I have from 20.85% to 20.05% (about 80 bps per year). 13.31% monthly turnover × 50 bps × 12 = 0.80%.
  
 ### Factor attribution
  
@@ -116,9 +116,8 @@ Factor loadings for the 4-factor model:
 | Value (HML) | +0.091 | +1.58 |
 | Momentum (UMD) | +0.384 | +6.52 |
  
-The UMD loading is only 0.38 rather than ~1.0 because the strategy is long-only and equal-weighted, while UMD is long-short and value-weighted. So I'm only capturing the long half of momentum, with a small-cap tilt that UMD doesn't have. That leaves residual alpha beyond all four canonical factors.
+The UMD loading is only 0.38 because the strategy is long-only and equal-weighted, while UMD is long-short and value-weighted. This means I'm only capturing the long half of momentum, with a small-cap tilt that UMD doesn't have. That leaves the residual alpha beyond all four factors compared against.
  
-The long-short variant is a different story: UMD beta of 0.998 (t = 12.47), 4F alpha of −3.23% (not significant, t = −1.47). My long-short *is* the academic momentum factor dollar-for-dollar, with a slight negative residual that's consistent with the survivorship-bias drag on the short leg.
  
 ### Drawdown and rolling Sharpe
  
@@ -126,10 +125,9 @@ The long-short variant is a different story: UMD beta of 0.998 (t = 12.47), 4F a
  
 ![Rolling Sharpe](reports/rolling_sharpe.png)
  
-The 2008–2009 drawdown is brutal — peak-to-trough of −55% — and took roughly 18 months to recover. That's the price of admission for momentum and is the central risk story for the strategy. The April 2009 momentum crash (documented by Daniel & Moskowitz 2016) shows up exactly where it should on the rolling Sharpe chart.
+The 2008–2009 drawdown had a dramatic peak-to-trough of −55% and took roughly 18 months to recover. The April 2009 momentum crash (documented by Daniel & Moskowitz 2016) shows up exactly where it should on the rolling Sharpe chart.
  
 ## Limitations
- 
  
 1. **Survivorship bias** is the dominant data issue. Using current S&P 500 constituents means all names in the universe survived to today. This biases the long leg upward (only good companies are present), and *especially* biases the short leg upward (the "losers" are bouncing-back survivors, not truly distressed firms). The 5.98% 4F alpha is likely smaller in a delisted-firm-inclusive universe — but the t-statistic of 3.66 is robust enough that the result isn't just noise.
 2. **11 of 503 tickers failed to download** from yfinance due to recent delistings, mergers, or acquisitions (Juniper → HPE, Hess → Chevron, Ansys → Synopsys, Walgreens went private, etc.), leaving 502 names in the final panel.
