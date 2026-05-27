@@ -20,8 +20,8 @@ Long-only top-decile momentum on current S&P 500 constituents. Six-month formati
  
 The strategy beats the equal-weighted S&P 500 by +3.4% per year gross, and retains 5.98% per year of alpha after controlling for the market, size, value, and academic momentum factors. The t-statistic of 3.66 is well above the conventional significance threshold of 2.
  
-## The interesting bit (and why it matters more than the Sharpe)
- 
+## Interesting Findings
+
 The classical long-short variant — long the top decile, short the bottom — earned essentially zero in this sample (Sharpe 0.03 gross). That's not a bug. It's survivorship bias, and it's the most important finding in this project.
  
 My universe is current S&P 500 members. Every name in the panel survived to today by definition. The "losers" in my cross-section aren't Lehman, Bear Stearns, Circuit City, or Enron — those are absent because they died. The losers are blue-chip companies that had a rough 6 months but didn't go to zero: banks during the financial crisis, energy stocks during oil crashes, Meta in 2022, healthcare names in 2023. These names mean-revert *harder* than the winners do, because they're high-quality firms temporarily out of favor.
@@ -130,7 +130,6 @@ The 2008–2009 drawdown is brutal — peak-to-trough of −55% — and took rou
  
 ## Limitations
  
-I tried to be honest about these throughout. The big ones:
  
 1. **Survivorship bias** is the dominant data issue. Using current S&P 500 constituents means all names in the universe survived to today. This biases the long leg upward (only good companies are present), and *especially* biases the short leg upward (the "losers" are bouncing-back survivors, not truly distressed firms). The 5.98% 4F alpha is likely smaller in a delisted-firm-inclusive universe — but the t-statistic of 3.66 is robust enough that the result isn't just noise.
 2. **11 of 503 tickers failed to download** from yfinance due to recent delistings, mergers, or acquisitions (Juniper → HPE, Hess → Chevron, Ansys → Synopsys, Walgreens went private, etc.), leaving 502 names in the final panel.
