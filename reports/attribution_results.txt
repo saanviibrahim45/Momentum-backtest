@@ -1,0 +1,189 @@
+
+======================================================================
+Long-Only (gross)
+======================================================================
+
+3-Factor (FF):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.786
+Model:                            OLS   Adj. R-squared:                  0.783
+Method:                 Least Squares   F-statistic:                     221.6
+Date:                Wed, 27 May 2026   Prob (F-statistic):           4.62e-73
+Time:                        01:09:40   Log-Likelihood:                 639.47
+No. Observations:                 279   AIC:                            -1271.
+Df Residuals:                     275   BIC:                            -1256.
+Df Model:                           3                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0065      0.002      4.054      0.000       0.003       0.010
+Mkt-RF         1.0339      0.042     24.499      0.000       0.951       1.117
+SMB            0.2561      0.078      3.277      0.001       0.103       0.409
+HML           -0.0530      0.074     -0.715      0.475      -0.198       0.092
+==============================================================================
+Omnibus:                       12.206   Durbin-Watson:                   1.789
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               15.746
+Skew:                          -0.355   Prob(JB):                     0.000381
+Kurtosis:                       3.922   Cond. No.                         44.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 6 lags and without small sample correction
+
+4-Factor (FF + UMD):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.863
+Model:                            OLS   Adj. R-squared:                  0.861
+Method:                 Least Squares   F-statistic:                     301.8
+Date:                Wed, 27 May 2026   Prob (F-statistic):           4.46e-99
+Time:                        01:09:40   Log-Likelihood:                 701.74
+No. Observations:                 279   AIC:                            -1393.
+Df Residuals:                     274   BIC:                            -1375.
+Df Model:                           4                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0052      0.001      3.847      0.000       0.003       0.008
+Mkt-RF         1.1501      0.037     30.789      0.000       1.077       1.223
+SMB            0.2992      0.063      4.770      0.000       0.176       0.422
+HML            0.0912      0.058      1.579      0.114      -0.022       0.204
+UMD            0.3843      0.059      6.514      0.000       0.269       0.500
+==============================================================================
+Omnibus:                        1.970   Durbin-Watson:                   1.827
+Prob(Omnibus):                  0.373   Jarque-Bera (JB):                1.849
+Skew:                           0.030   Prob(JB):                        0.397
+Kurtosis:                       3.394   Cond. No.                         44.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 6 lags and without small sample correction
+
+======================================================================
+Long-Only (net, 20bps)
+======================================================================
+
+3-Factor (FF):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.786
+Model:                            OLS   Adj. R-squared:                  0.783
+Method:                 Least Squares   F-statistic:                     221.6
+Date:                Wed, 27 May 2026   Prob (F-statistic):           4.55e-73
+Time:                        01:09:40   Log-Likelihood:                 639.49
+No. Observations:                 279   AIC:                            -1271.
+Df Residuals:                     275   BIC:                            -1256.
+Df Model:                           3                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0062      0.002      3.890      0.000       0.003       0.009
+Mkt-RF         1.0340      0.042     24.493      0.000       0.951       1.117
+SMB            0.2563      0.078      3.281      0.001       0.103       0.409
+HML           -0.0530      0.074     -0.715      0.474      -0.198       0.092
+==============================================================================
+Omnibus:                       12.026   Durbin-Watson:                   1.790
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               15.432
+Skew:                          -0.352   Prob(JB):                     0.000446
+Kurtosis:                       3.912   Cond. No.                         44.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 6 lags and without small sample correction
+
+4-Factor (FF + UMD):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.863
+Model:                            OLS   Adj. R-squared:                  0.861
+Method:                 Least Squares   F-statistic:                     301.7
+Date:                Wed, 27 May 2026   Prob (F-statistic):           4.56e-99
+Time:                        01:09:40   Log-Likelihood:                 701.82
+No. Observations:                 279   AIC:                            -1394.
+Df Residuals:                     274   BIC:                            -1375.
+Df Model:                           4                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0050      0.001      3.656      0.000       0.002       0.008
+Mkt-RF         1.1501      0.037     30.774      0.000       1.077       1.223
+SMB            0.2994      0.063      4.776      0.000       0.177       0.422
+HML            0.0912      0.058      1.580      0.114      -0.022       0.204
+UMD            0.3844      0.059      6.523      0.000       0.269       0.500
+==============================================================================
+Omnibus:                        1.915   Durbin-Watson:                   1.828
+Prob(Omnibus):                  0.384   Jarque-Bera (JB):                1.776
+Skew:                           0.033   Prob(JB):                        0.412
+Kurtosis:                       3.385   Cond. No.                         44.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 6 lags and without small sample correction
+
+======================================================================
+Long-Short (gross)
+======================================================================
+
+3-Factor (FF):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.132
+Model:                            OLS   Adj. R-squared:                  0.123
+Method:                 Least Squares   F-statistic:                     4.288
+Date:                Wed, 27 May 2026   Prob (F-statistic):            0.00560
+Time:                        01:09:40   Log-Likelihood:                 466.39
+No. Observations:                 279   AIC:                            -924.8
+Df Residuals:                     275   BIC:                            -910.3
+Df Model:                           3                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0006      0.003      0.205      0.838      -0.005       0.006
+Mkt-RF        -0.2201      0.094     -2.331      0.020      -0.405      -0.035
+SMB           -0.0357      0.121     -0.295      0.768      -0.273       0.202
+HML           -0.4404      0.139     -3.166      0.002      -0.713      -0.168
+==============================================================================
+Omnibus:                      187.952   Durbin-Watson:                   1.781
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3469.265
+Skew:                          -2.386   Prob(JB):                         0.00
+Kurtosis:                      19.603   Cond. No.                         44.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 6 lags and without small sample correction
+
+4-Factor (FF + UMD):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.741
+Model:                            OLS   Adj. R-squared:                  0.737
+Method:                 Least Squares   F-statistic:                     42.00
+Date:                Wed, 27 May 2026   Prob (F-statistic):           1.89e-27
+Time:                        01:09:40   Log-Likelihood:                 635.17
+No. Observations:                 279   AIC:                            -1260.
+Df Residuals:                     274   BIC:                            -1242.
+Df Model:                           4                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.0027      0.002     -1.475      0.140      -0.006       0.001
+Mkt-RF         0.0814      0.054      1.518      0.129      -0.024       0.187
+SMB            0.0761      0.066      1.155      0.248      -0.053       0.205
+HML           -0.0661      0.066     -1.005      0.315      -0.195       0.063
+UMD            0.9977      0.080     12.469      0.000       0.841       1.155
+==============================================================================
+Omnibus:                       21.599   Durbin-Watson:                   1.953
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               50.064
+Skew:                           0.348   Prob(JB):                     1.35e-11
+Kurtosis:                       4.955   Cond. No.                         44.4
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 6 lags and without small sample correction
